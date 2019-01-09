@@ -99,7 +99,9 @@ class App extends Component {
   render() {
     return (<div className="App">
       <div className="banner">
-        <h1>Dynamic links app</h1>
+        <a href="/">
+          <h1>Dynamic Links</h1>
+        </a>
         <h2>Checking items on the checklist will enable/disable the links based on their condition.</h2>
       </div>
       <div className="checkboxes">

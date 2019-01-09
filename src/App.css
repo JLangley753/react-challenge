@@ -1,32 +1,159 @@
-.App {
+/* Core styles */
+
+body {
+  background-color: #76b39d;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1em;
+  cursor: default;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #f9f7f7;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* Banner styling */
+
+.banner {
+  background-color: #155e63;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 5px 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.banner h1 {
+  font-size: 2.5em;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f9f7f7;
+}
+
+/* Checkbox and link styling */
+
+.checkbox, .link {
+  align-items: baseline;
+  display: flex;
+  position: relative;
+}
+
+.checkbox {
+  margin: 20px auto;
+}
+
+.links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.links, .checkboxes {
+  background-color: #f9f7f7;
+  box-shadow: 7px 4px 3px 3px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  margin: 40px 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.checkboxes {
+  border-radius: 30px 30px 0px 0px;
+}
+
+.links {
+  border-radius: 0px 0px 30px 30px;
+}
+
+.link p, .checkbox p {
+  margin-left: 38px;
+}
+
+.checkbox input {
+  height: 20px;
+  width: 20px;
+}
+
+.checkbox p {
+  position: absolute;
+  left: 40px;
+  top: 1px;
+  margin: 0;
+}
+
+.link a {
+  color: inherit;
+  text-decoration: none;
+  min-width: 50px;
+}
+
+.deactivated, .activated {
+  position: relative;
+  padding: 5px;
+  transition: 0.3s ease;
+}
+
+.deactivated {
+  color: #ccc !important;
+  cursor: not-allowed;
+}
+
+.activated {
+  color: black !important;
+  cursor: pointer !important;
+}
+
+.deactivated::before {
+  position: absolute;
+  content: "";
+  width: 85%;
+  height: 1px;
+  top: 52%;
+  background-color: black;
+  transition: 0.3s ease;
+}
+
+.activated::before {
+  width: 0%;
+  transition: 0.3s ease;
+}
+
+.deactivated ~ p {
+  color: #aaa;
+  transition: 0.3s ease;
+}
+
+.activated ~ p {
+  color: black;
+  transition: 0.3s ease;
+}
+
+/* Media queries */
+
+@media (min-width: 768px) {
+  .links, .checkboxes {
+    margin: 50px 100px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (min-width: 1024px) {
+  .links, .checkboxes {
+    margin: 50px 300px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .checkboxes {
+    display: flex;
+    padding: 30px 10px;
+    justify-content: center;
+  }
+
+  .checkbox {
+    margin: 10px 40px;
+  }
+
+  .checkbox p {
+    position: absolute;
+    left: 35px;
+    margin: 0;
+    min-width: 55px;
   }
 }

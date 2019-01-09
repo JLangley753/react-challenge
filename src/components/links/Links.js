@@ -31,7 +31,11 @@ class Links extends Component {
     };
   }
 
+// The state above includes the number of the link and the description associated with it.
 
+// Below is the render function. Originally, I mapped over the items state object and used props to pass down a function that decided on whether the link was enabled from App. Because of the method I went with, and because each link needed a unique prop I decided to go with this method.
+
+// The prop with the reference to the 'xActive' function decides whether the link is activated or deactivated, depending on if it's been assigned a 'true' or 'false' boolean.
 
   render() {
     const {items} = this.state;

@@ -92,7 +92,11 @@ class App extends Component {
     }
   }
 
+  // Function that creates the checkboxes and gives them a number of props. Two of which are for selecting whether the checkbox is checked and another references the checkboxChange function when the checkbox detects a change.
+
   createCheckbox = checkbox => (<Checkbox number={checkbox} isChecked={this.state.checkboxes[checkbox]} onCheckboxChange={this.checkboxChange} key={checkbox}/>);
+
+  // Takes items array and references the createCheckbox function on each one to create a new checkbox
 
   createCheckboxes = () => items.map(this.createCheckbox);
 

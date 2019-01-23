@@ -1,44 +1,46 @@
-import React, {Component} from 'react';
+import React, {
+  Component
+} from 'react';
 
 class Links extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [
-        {
-          number: 1,
-          descr: 'Enabled when Item 1 is checked'
-        }, {
-          number: 2,
-          descr: 'Enabled when Items 3 & 5 are checked'
-        }, {
-          number: 3,
-          descr: 'Enabled when all items are checked'
-        }, {
-          number: 4,
-          descr: 'Enabled when no items are checked'
-        }, {
-          number: 5,
-          descr: 'Enabled when all odd items are checked'
-        }, {
-          number: 6,
-          descr: 'Enabled when all even items are checked'
-        }, {
-          number: 7,
-          descr: 'Enabled when at least one item is checked'
-        }
-      ]
+      items: [{
+        number: 1,
+        descr: 'Enabled when Item 1 is checked'
+      }, {
+        number: 2,
+        descr: 'Enabled when Items 3 & 5 are checked'
+      }, {
+        number: 3,
+        descr: 'Enabled when all items are checked'
+      }, {
+        number: 4,
+        descr: 'Enabled when no items are checked'
+      }, {
+        number: 5,
+        descr: 'Enabled when all odd items are checked'
+      }, {
+        number: 6,
+        descr: 'Enabled when all even items are checked'
+      }, {
+        number: 7,
+        descr: 'Enabled when at least one item is checked'
+      }]
     };
   }
 
-// The state above includes the number of the link and the description associated with it.
+  // The state above includes the number of the link and the description associated with it.
 
-// Below is the render function. Originally, I mapped over the items state object and used props to pass down a function that decided on whether the link was enabled from App. Because of the method I went with, and because each link needed a unique prop I decided to go with this method.
+  // Below is the render function. Originally, I mapped over the items state object and used props to pass down a function that decided on whether the link was enabled from App. Because of the method I went with, and because each link needed a unique prop I decided to go with this method.
 
-// The prop with the reference to the 'xActive' function decides whether the link is activated or deactivated, depending on if it's been assigned a 'true' or 'false' boolean.
+  // The prop with the reference to the 'xActive' function decides whether the link is activated or deactivated, depending on if it's been assigned a 'true' or 'false' boolean.
 
   render() {
-    const {items} = this.state;
+    const {
+      items
+    } = this.state;
     return (<div className="links">
       <div className="link" key={items[0].number}>
         <a href="/" className={this.props.oneActive

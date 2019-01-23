@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, {
+  Component
+} from 'react';
 import Checkbox from './components/checklist/Checklist';
 import Links from './components/links/Links';
 import './App.css';
@@ -19,8 +21,8 @@ class App extends Component {
     this.state = {
       checkboxes: items.reduce((checkbox, checked) => ({
         ...checkbox,
-        [checked]: false
-      }),)
+        [checked]: false,
+      }), {})
     }
   }
 
